@@ -371,7 +371,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.6
+  m_FillAmount: 0.8
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -25800,7 +25800,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 268, y: 130}
+  m_AnchoredPosition: {x: 201.76, y: 88.59}
   m_SizeDelta: {x: 65.49, y: 63.38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1568751381
@@ -26449,7 +26449,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -236.19, y: 122.68}
+  m_AnchoredPosition: {x: -175, y: 88.59}
   m_SizeDelta: {x: 105.61, y: 19.44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2073728274
@@ -26466,7 +26466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minimum: 0
   maximum: 100
-  current: 60
+  current: 80
   mask: {fileID: 151106707}
 --- !u!114 &2073728275
 MonoBehaviour:
