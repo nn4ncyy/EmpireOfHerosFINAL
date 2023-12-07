@@ -5,17 +5,18 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float health;
-    public float MaxHitPoints = 5;
+    public float MaxHitPoints;
     public LevelBar levelBar;
     private Animator animator;
     public AudioSource enemyDeathSound;
   
-    
+    [SerializeField] EnemyHealthBar enemyHealthBar;
 
 
     void Start()
     {
         health = MaxHitPoints;
+        enemyHealthBar = GetComponentInChildren<EnemyHealthBar>();
         
     }
 
@@ -23,6 +24,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
+        enemyHealthBar.UpdateHealthBar(health, MaxHitPoints);
 
         if(health <= 0f)
         {
