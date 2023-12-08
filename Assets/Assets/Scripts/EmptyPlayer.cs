@@ -14,7 +14,7 @@ public class EmptyPlayer : MonoBehaviour
 
     private Animator animator;
 
-
+    public LayerMask solidObjectsLayer;
     public LayerMask interactableLayer;
 
     private void Awake()
@@ -24,7 +24,7 @@ public class EmptyPlayer : MonoBehaviour
 
    
 
-    private void Update()
+    public void HandleUpdate()
     {
         if (!isMoving)
         {
@@ -58,7 +58,7 @@ public class EmptyPlayer : MonoBehaviour
         var facingDir = new Vector3(input.x, input.y);
         var interactPos = transform.position + facingDir;
 
-        Debug.DrawLine(transform.position, interactPos, Color.red, 1f);
+        //Debug.DrawLine(transform.position, interactPos, Color.red, 1f);
 
         var collider = Physics2D.OverlapCircle(interactPos, 0.2f, interactableLayer);
         if(collider != null)
@@ -85,7 +85,7 @@ public class EmptyPlayer : MonoBehaviour
 
     private bool IsWalkable(Vector3 targetPos)
     {
-        if(Physics2D.OverlapCircle(targetPos, 0.2f, interactableLayer) != null)
+        if(Physics2D.OverlapCircle(targetPos, 0.2f, interactableLayer | solidObjectsLayer) != null)
         {
             return false;
         }
