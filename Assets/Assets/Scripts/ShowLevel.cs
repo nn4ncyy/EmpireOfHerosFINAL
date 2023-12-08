@@ -11,6 +11,7 @@ public class ShowLevel : MonoBehaviour
 
     void Update()
     {
+
         UpdateLevelDisplay();
     }
     
@@ -22,6 +23,7 @@ public class ShowLevel : MonoBehaviour
             textElement.text = textValue + levelManager.level.ToString();
             //Debug.Log("Score updated to: " + scoreManager.score);
         }
+        //levelManager.ResetScore();
     }
 
 }

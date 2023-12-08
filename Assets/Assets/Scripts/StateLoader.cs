@@ -24,6 +24,15 @@ public class StateLoader : MonoBehaviour
 		StartCoroutine(LoadState(SceneManager.GetActiveScene().buildIndex - 1));
 	}
 
+	public void Choose()
+	{
+		SceneManager.LoadScene("ChooseYourPlayer");
+	}
+
+	public void CutScene()
+	{
+		SceneManager.LoadScene("CutScene");
+	}
 	public void HomeState()
 	{
 		SceneManager.LoadScene("HomeScene");

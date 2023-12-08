@@ -16,9 +16,10 @@ public class PlayerController : MonoBehaviour
 
     private bool flipped = false;
 
+    public LayerMask solidObjectsLayer;
     public LayerMask interactableLayer;
 
-    public AudioSource walkEffect;
+    //public AudioSource walkEffect;
 
     private void Awake()
     {
@@ -27,7 +28,7 @@ public class PlayerController : MonoBehaviour
 
    
 
-    public void Update()
+    public void HandleUpdate()
     {
         if (!isMoving)
         {
@@ -36,9 +37,9 @@ public class PlayerController : MonoBehaviour
 
             if (input != Vector2.zero)
             {
-                //animator.SetFloat("moveX", input.x);
-                //animator.SetFloat("moveY", input.y);
-                walkEffect.Play();
+                animator.SetFloat("moveX", input.x);
+                animator.SetFloat("moveY", input.y);
+                //walkEffect.Play();
                 var targetPos = transform.position;
                 targetPos.x += input.x;
                 targetPos.y += input.y;
@@ -62,7 +63,10 @@ public class PlayerController : MonoBehaviour
         }
         
         if (Input.GetKeyDown(KeyCode.Z))
+        {
+            Debug.Log("pressed");
             Interact();
+        }
 
     }
 
@@ -70,7 +74,7 @@ public class PlayerController : MonoBehaviour
     void Interact()
     {
 
-        var facingDir = new Vector3(input.x, input.y);
+        var facingDir = new Vector3(animator.GetFloat("moveX"), animator.GetFloat("moveY"));
         var interactPos = transform.position + facingDir;
 
         Debug.DrawLine(transform.position, interactPos, Color.red, 1f);
@@ -78,8 +82,8 @@ public class PlayerController : MonoBehaviour
         var collider = Physics2D.OverlapCircle(interactPos, 0.2f, interactableLayer);
         if(collider != null)
         {
-            Debug.Log("there is an NPC here!");
-        }
+            collider.GetComponent<Interactable>()?.Interact();
+        } 
     }
 
     void flip()
@@ -107,7 +111,7 @@ public class PlayerController : MonoBehaviour
 
     private bool IsWalkable(Vector3 targetPos)
     {
-        if(Physics2D.OverlapCircle(targetPos, 0.2f, interactableLayer) != null)
+        if(Physics2D.OverlapCircle(targetPos, 0.2f, interactableLayer | solidObjectsLayer) != null)
         {
             return false;
         }

@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Castle.unity
     guid: 8dcb02b64f03596468972f134ed24b58
+  - enabled: 1
+    path: Assets/Scenes/ChooseYourPlayer.unity
+    guid: 893d8a4455e97674b9bfb63ea8b315e2
+  - enabled: 1
+    path: Assets/Scenes/CutScene.unity
+    guid: 132099305b980a14ca94e7d9b784643f
   m_configObjects: {}

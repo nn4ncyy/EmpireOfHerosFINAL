@@ -54,7 +54,9 @@ public class LevelManager : MonoBehaviour
     public void ResetScore()
     {
         level     = 0;
+        pts = 0;
         SaveLevel(); // Save the reset score to PlayerPrefs
+        SavePts();
     }
 
 }
