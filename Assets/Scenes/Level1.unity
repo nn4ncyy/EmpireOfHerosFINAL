@@ -652,7 +652,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.4
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -7308,7 +7308,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1517745563
 RectTransform:
   m_ObjectHideFlags: 0
@@ -28135,7 +28135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minimum: 0
   maximum: 100
-  current: 40
+  current: 0
   mask: {fileID: 151106707}
 --- !u!114 &2073728275
 MonoBehaviour:
